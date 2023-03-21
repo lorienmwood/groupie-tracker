@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style.css" />
+    <title>GROUPIE 👾 TRACKER</title>
+  </head>
+  <body>
+    <h4><b>GROUPIE TRACKER</b></h4>
+    <div class="card">
+      <form class="container" action="/artist" method="POST">
+        {{range . }}
+        <span class="cc">
+          <section type="submit" value="{{.ID}}" name="ChosenBandInfo">
+            <a href="{{.UrlArtist}}"
+              ><img
+                src="{{.Image}}"
+                alt="Band Picture"
+                width="275"
+                height="310"
+                title="click me"
+            /></a>
+            <p>{{.Name}}</p>
+            <div name="date">
+              <p><a href="{{.ConcertDates}}"> Dates </a></p>
+              <p><a href="{{.Locations}}"> Locations </a></p>
+              <p><a href="{{.Relations}}"> Relations </a></p>
+            </div>
+          </section>
+        </span>
+        {{end}}
+      </form>
+    </div>
+  </body>
+</html>
